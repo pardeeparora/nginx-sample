@@ -5,15 +5,15 @@ metadata:
 spec:
   replicas: 2
   selector:
-    matchLables:
+    matchLabels:  # ✅ fixed spelling
       app: nginx-app
   template:
     metadata:
-      lables:
+      labels:  # ✅ fixed spelling
         app: nginx-app
     spec:
       containers:
       - name: nginx-app
         image: pardeeparora/custom-nginx-k8s
         ports:
-          containerPort: 80
+        - containerPort: 80
