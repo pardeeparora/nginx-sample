@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: custom-nginx-deployment
+  name: nginx-app
 sepc:
   replicas: 2
   selector:
@@ -10,7 +10,7 @@ sepc:
   template:
     metadata:
       lables:
-        app: custom-nginx
+        app: nginx-app
     spec:
       containers:
       - name: nginx

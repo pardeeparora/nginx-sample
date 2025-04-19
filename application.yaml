@@ -1,0 +1,21 @@
+apiVersion: agroproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+  namespace: agrocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/pardeeparora/nginx-sample.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
