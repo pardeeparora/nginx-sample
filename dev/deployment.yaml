@@ -13,7 +13,7 @@ sepc:
         app: nginx-app
     spec:
       containers:
-      - name: nginx
+      - name: nginx-app
         image: pardeeparora/custom-nginx-k8s
         ports:
           containerPort: 80
