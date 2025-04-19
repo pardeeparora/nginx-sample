@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-nginx-deployment
+sepc:
+  replicas: 2
+  selector:
+    matchLables:
+      app: nginx-app
+  template:
+    metadata:
+      lables:
+        app: custom-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: pardeeparora/custom-nginx-k8s
+        ports:
+          containerPort: 80
