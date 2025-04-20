@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-app-dev
+  name: nginx-app-prod
   labels:
-    app: nginx-app-dev
+    app: nginx-app-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-app-dev
+      app: nginx-app-prod
   template:
     metadata:
       labels:
-        app: nginx-app-dev
+        app: nginx-app-prod
     spec:
       containers:
-      - name: nginx-app-dev
+      - name: nginx-app-prod
         image: pardeeparora/custom-nginx-k8s
         ports:
         - containerPort: 80

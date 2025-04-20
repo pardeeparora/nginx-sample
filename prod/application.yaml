@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-app
+  name: nginx-app-prod
   namespace: argocd
 spec:
   project: default
@@ -9,10 +9,10 @@ spec:
   source:
     repoURL: https://github.com/pardeeparora/nginx-sample.git
     targetRevision: HEAD
-    path: dev
+    path: prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
